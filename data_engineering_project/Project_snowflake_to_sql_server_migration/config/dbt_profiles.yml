@@ -1,0 +1,14 @@
+my_project:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: xw39127.ap-south-1.aws
+      user: SNOWFLAKE64
+      password: SGS99@snowflake
+      role: ACCOUNTADMIN
+      database: ADVENTUREWORKS2022_SFMIGRATION
+      warehouse: COMPUTE_WH
+      schema: PUBLIC
+      threads: 4
+      client_session_keep_alive: False

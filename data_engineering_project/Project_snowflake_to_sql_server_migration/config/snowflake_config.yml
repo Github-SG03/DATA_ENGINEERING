@@ -1,0 +1,8 @@
+snowflake:
+  user: SNOWFLAKE64
+  password: SGS99@snowflake
+  account: xw39127.ap-south-1.aws
+  warehouse: COMPUTE_WH
+  database: ADVENTUREWORKS2022_SFMIGRATION
+  schema: PUBLIC
+  role: ACCOUNTADMIN
