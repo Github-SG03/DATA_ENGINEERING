@@ -9,9 +9,9 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='%(asctime)s -
 def get_snowpark_session() -> Session:
     connection_parameters = {
        "ACCOUNT":"KQZBNVD-PG45306",
-        "USER":"SNOWFLAKE64",
-        "PASSWORD":"SGS99@snowflake",
-        "ROLE":"ACCOUNTADMIN",
+        "USER":"snowpark_user",
+        "PASSWORD":"Test@12$4",
+        "ROLE":"SYSADMIN",
         "DATABASE":"SNOWFLAKE_SAMPLE_DATA",
         "SCHEMA":"TPCH_SF1",
         "WAREHOUSE":"SNOWPARK_ETL_WH"
