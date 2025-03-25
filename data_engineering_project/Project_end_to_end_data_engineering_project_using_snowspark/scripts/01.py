@@ -3,9 +3,6 @@ from snowflake.snowpark import Session # type: ignore
 import sys
 import logging
 
-# initiate logging at info level
-logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%I:%M:%S')
-
 # snowpark session
 def get_snowpark_session() -> Session:
     connection_parameters = {
