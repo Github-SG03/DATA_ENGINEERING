@@ -1,0 +1,11 @@
+aws:
+  s3_bucket: "your-s3-bucket-name"
+  region: "your-region"
+
+snowflake:
+  account: "your-snowflake-account"
+  user: "your-username"
+  password: "your-password"
+  warehouse: "your-warehouse"
+  database: "your-database"
+  schema: "your-schema"
