@@ -1,0 +1,100 @@
+[0m18:27:13.686999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5F7A34B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5F8A1CC10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5F8A1FDD0>]}
+
+
+============================== 18:27:13.693143 | fb880a77-6be9-48d5-b7ed-d90b31fef68f ==============================
+[0m18:27:13.693143 [info ] [MainThread]: Running with dbt=1.10.3
+[0m18:27:13.696997 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Shivam Gupta\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init netflix', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:27:13.757217 [debug] [MainThread]: Starter project path: C:\Users\Shivam Gupta\OneDrive\Documents\Shivam_Developement\DATA_ENGINEERING\data_engineering_project\Netflix-DBT\venv\Lib\site-packages\dbt\include\starter_project
+[0m18:27:13.891120 [info ] [MainThread]: 
+Your new dbt project "netflix" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:27:13.895135 [info ] [MainThread]: Setting up your profile.
+[0m18:32:44.856732 [info ] [MainThread]: Profile netflix written to C:\Users\Shivam Gupta\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:32:44.951177 [debug] [MainThread]: Command `dbt init` succeeded at 18:32:44.948186 after 331.39 seconds
+[0m18:32:44.961322 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5F79FAB90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5F0D6A410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5F8A52610>]}
+[0m18:32:44.967834 [debug] [MainThread]: Flushing usage events
+[0m18:32:46.750229 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:46:12.097717 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F95C003E50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F95BDBD550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F95C030650>]}
+
+
+============================== 19:46:12.106415 | 84fd0480-f4ed-4993-84ff-1eff32a78ab0 ==============================
+[0m19:46:12.106415 [info ] [MainThread]: Running with dbt=1.10.3
+[0m19:46:12.107412 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Shivam Gupta\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m19:46:12.109420 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Shivam Gupta\OneDrive\Documents\Shivam_Developement\DATA_ENGINEERING\data_engineering_project\Netflix-DBT\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m19:46:12.110420 [debug] [MainThread]: Command `dbt run` failed at 19:46:12.110420 after 0.10 seconds
+[0m19:46:12.111419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F95BFFDA90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F95567CC50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F95C001310>]}
+[0m19:46:12.111419 [debug] [MainThread]: Flushing usage events
+[0m19:46:13.343494 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:17:10.732268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D12F8CE9D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D12F8F9950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D12F8F8510>]}
+
+
+============================== 22:17:10.736981 | 176a1f97-8c10-4e17-b12d-a3e0a4b5bc95 ==============================
+[0m22:17:10.736981 [info ] [MainThread]: Running with dbt=1.10.3
+[0m22:17:10.738110 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\Shivam Gupta\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:17:10.739281 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Shivam Gupta\OneDrive\Documents\Shivam_Developement\DATA_ENGINEERING\data_engineering_project\Netflix-DBT\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:17:10.739281 [debug] [MainThread]: Command `dbt run` failed at 22:17:10.739281 after 0.10 seconds
+[0m22:17:10.741288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D130924B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D130924910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D1309248D0>]}
+[0m22:17:10.741288 [debug] [MainThread]: Flushing usage events
+[0m22:17:12.026826 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:23:09.245392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBC8AD8A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBC8E20D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBC8BDDB10>]}
+
+
+============================== 12:23:09.250924 | c60584d8-5f9f-4358-bf9f-96dedaf888a2 ==============================
+[0m12:23:09.250924 [info ] [MainThread]: Running with dbt=1.10.3
+[0m12:23:09.252200 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Shivam Gupta\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --model fact_genome_scores', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:23:09.252200 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+Usage of `--models`, `--model`, and `-m` is deprecated in favor of
+`--resource-type model --select`
+[0m12:23:09.252200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'c60584d8-5f9f-4358-bf9f-96dedaf888a2', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBC8E1FAD0>]}
+[0m12:23:09.254284 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Shivam Gupta\OneDrive\Documents\Shivam_Developement\DATA_ENGINEERING\data_engineering_project\Netflix-DBT\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:23:09.254284 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ModelParamUsageDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m12:23:09.254284 [debug] [MainThread]: Command `dbt run` failed at 12:23:09.254284 after 0.09 seconds
+[0m12:23:09.256292 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBC8E1FAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBC2504D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBC8BDD350>]}
+[0m12:23:09.256292 [debug] [MainThread]: Flushing usage events
+[0m12:23:11.726312 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:25:05.351631 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026071D536D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026072D7E690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026072D7D9D0>]}
+
+
+============================== 12:25:05.351631 | 150dbc5d-ed73-4677-92b9-db24420bec81 ==============================
+[0m12:25:05.351631 [info ] [MainThread]: Running with dbt=1.10.3
+[0m12:25:05.351631 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Shivam Gupta\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --select fact_genome_scores', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:25:05.351631 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Shivam Gupta\OneDrive\Documents\Shivam_Developement\DATA_ENGINEERING\data_engineering_project\Netflix-DBT\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:25:05.360495 [debug] [MainThread]: Command `dbt run` failed at 12:25:05.360495 after 0.16 seconds
+[0m12:25:05.360495 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002606B454D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026071D4DF90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002606B3C7E50>]}
+[0m12:25:05.360495 [debug] [MainThread]: Flushing usage events
+[0m12:25:07.324302 [debug] [MainThread]: An error was encountered while trying to flush usage events
