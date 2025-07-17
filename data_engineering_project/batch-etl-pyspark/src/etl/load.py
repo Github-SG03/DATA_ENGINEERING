@@ -1,5 +1,5 @@
-from pyspark.sql import SparkSession
-from pyspark.sql import DataFrame
+from pyspark.sql import SparkSession # type: ignore
+from pyspark.sql import DataFrame # type: ignore
 
 def load_data(df: DataFrame, output_path: str, format: str = 'parquet') -> None:
     """

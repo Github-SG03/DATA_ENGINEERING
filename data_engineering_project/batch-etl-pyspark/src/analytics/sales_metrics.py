@@ -1,5 +1,5 @@
-from pyspark.sql import SparkSession
-from pyspark.sql import functions as F
+from pyspark.sql import SparkSession # type: ignore
+from pyspark.sql import functions as F # type: ignore
 
 def calculate_total_sales(df):
     return df.agg(F.sum("amount").alias("total_sales"))

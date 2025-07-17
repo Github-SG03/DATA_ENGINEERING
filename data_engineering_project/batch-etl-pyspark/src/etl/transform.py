@@ -1,5 +1,5 @@
-from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, sum, count, when
+from pyspark.sql import SparkSession # type: ignore
+from pyspark.sql.functions import col, sum, count, when # type: ignore
 
 def transform_data(spark, orders_df, customers_df, products_df):
     # Join orders with customers and products

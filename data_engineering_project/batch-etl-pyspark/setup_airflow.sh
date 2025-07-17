@@ -22,12 +22,12 @@ pip install apache-airflow
 
 echo "Setting AIRFLOW_HOME and initializing Airflow DB..."
 export AIRFLOW_HOME=$(pwd)/airflow
-mkdir -p $AIRFLOW_HOME
+mkdir -p "$AIRFLOW_HOME"
 airflow db init
 
 echo "Creating Airflow admin user..."
-airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin
+airflow users create --username sks --firstname Shivam --lastname Gupta --role Admin --email sks.shivam339@zohomail.in --password sks339@zoho
 
 echo "Setup complete!"
-echo "To start Airflow webserver, run: source .venv/bin/activate && export AIRFLOW_HOME=$(pwd)/airflow && airflow webserver"
+echo "To start Airflow webserver, run: source .venv/bin/activate && export AIRFLOW_HOME=$(pwd)/airflow && airflow webserver -p 8085"
 echo "To start Airflow scheduler, run: source .venv/bin/activate && export AIRFLOW_HOME=$(pwd)/airflow && airflow scheduler"

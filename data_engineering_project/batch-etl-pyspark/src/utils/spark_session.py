@@ -1,4 +1,4 @@
-from pyspark.sql import SparkSession
+from pyspark.sql import SparkSession # type: ignore
 
 def create_spark_session(app_name="Batch ETL PySpark"):
     """

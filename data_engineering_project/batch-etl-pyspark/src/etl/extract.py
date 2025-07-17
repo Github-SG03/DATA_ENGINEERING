@@ -1,15 +1,5 @@
-from pyspark.sql import SparkSession
+from src.utils.spark_session import create_spark_session # type: ignore
 import os
-
-def create_spark_session():
-    """
-    Create and return a Spark session.
-    """
-    spark = SparkSession.builder \
-        .appName("E-commerce Sales Analytics ETL") \
-        .config("spark.some.config.option", "config-value") \
-        .getOrCreate()
-    return spark
 
 def read_csv(file_path):
     """

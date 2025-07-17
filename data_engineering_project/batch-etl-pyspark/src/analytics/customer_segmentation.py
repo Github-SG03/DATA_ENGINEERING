@@ -1,5 +1,5 @@
-from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, when
+from pyspark.sql import SparkSession # type: ignore
+from pyspark.sql.functions import col, when # type: ignore
 
 def segment_customers(df):
     """
