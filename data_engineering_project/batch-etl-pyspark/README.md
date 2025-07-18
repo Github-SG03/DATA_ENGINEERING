@@ -1,64 +1,96 @@
-# batch-etl-pyspark
+# 🛠️ PySpark E-Commerce ETL Project
 
-## Overview
-The `batch-etl-pyspark` project is designed to facilitate the extraction, transformation, and loading (ETL) of e-commerce sales data. This pipeline processes raw sales data to generate valuable insights and analytics that can drive business decisions.
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![CI](https://github.com/<your-username>/<repo-name>/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/yourusername/ecommerce-pyspark-etl/branch/main/graph/badge.svg)](https://codecov.io/gh/yourusername/ecommerce-pyspark-etl)
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![PySpark](https://img.shields.io/badge/PySpark-3.5+-orange.svg)
+![Security](https://img.shields.io/badge/security-disclosures-important.svg)
 
-## Project Structure
-The project is organized into the following main directories and files:
+A production-grade batch ETL pipeline using PySpark for e-commerce datasets. Includes modular extraction, transformation, and loading (ETL), orchestrated via Apache Airflow, and integrated with CI/CD workflows and best practices for maintainability.
 
-- **src/**: Contains the source code for the ETL pipeline and analytics.
-  - **etl/**: Includes scripts for extracting, transforming, and loading data.
-    - `extract.py`: Functions for extracting data from various sources.
-    - `transform.py`: Functions for cleaning and transforming the extracted data.
-    - `load.py`: Functions for loading the transformed data into the desired format.
-  - **analytics/**: Contains scripts for analyzing the processed data.
-    - `sales_metrics.py`: Functions to calculate various sales metrics.
-    - `customer_segmentation.py`: Functions for segmenting customers based on behavior.
-  - **utils/**: Utility functions to support the ETL processes.
-    - `spark_session.py`: Manages the Spark session configuration.
-  - **config/**: Configuration settings for the project.
-    - `settings.py`: Reads environment variables and constants.
+---
 
-- **data/**: Directory for storing data files.
-  - **raw/**: Contains raw input data files (e.g., `customers.csv`, `products.csv`, `orders.csv`).
-  - **processed/**: Holds processed data files after the ETL pipeline runs.
-  - **analytics/**: Stores analytics outputs or reports.
+## 📦 Project Structure
+.
+├── dags/
+│ └── ecommerce_etl_dag.py # Airflow DAG
+├── src/
+│ ├── etl/
+│ │ ├── extract.py # Data extraction logic
+│ │ ├── transform.py # Data transformation logic
+│ │ └── load.py # Data loading logic
+│ └── utils/
+│ └── spark_session.py # SparkSession configuration
+├── data/ # Input datasets
+├── logs/ # Runtime logs
+├── .env # Environment variables
+├── .gitignore
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── pyproject.toml (optional)
 
-- **tests/**: Contains unit tests for the ETL and analytics functions.
-  - `test_extract.py`: Unit tests for the extraction functions.
-  - `test_transform.py`: Unit tests for the transformation functions.
-  - `test_load.py`: Unit tests for the loading functions.
-  - `test_sales_metrics.py`: Unit tests for sales metrics calculations.
 
-- **requirements.txt**: Lists the Python dependencies required for the project.
+---
 
-- **.gitignore**: Specifies files and directories to be ignored by Git.
+## ⚙️ Features
 
-## Setup Instructions
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd batch-etl-pyspark
-   ```
+- ✅ Modular ETL pipeline using PySpark
+- ✅ Airflow DAG orchestration
+- ✅ `.env` based secret/config management
+- ✅ Local execution using Jupyter or CLI
+- ✅ Structured logging
+- ✅ GitHub Actions ready (CI template)
+- ✅ Production-style project layout
 
-2. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+---
 
-3. Prepare the raw data files in the `data/raw` directory.
+## 🚀 Getting Started
 
-4. Run the ETL pipeline:
-   - Execute the main ETL script (to be created) that orchestrates the extraction, transformation, and loading processes.
+### 1. Clone this Repository
 
-## Usage Examples
-- To extract data from CSV files, call the functions defined in `extract.py`.
-- Use `transform.py` to clean and derive KPIs from the extracted data.
-- Load the processed data using the functions in `load.py`.
-- Analyze the results with the functions in `sales_metrics.py` and `customer_segmentation.py`.
+```bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
 
-## Contributing
-Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+2. Setup Virtual Environment
+
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+3. Configure .env file
+
+OUTPUT_PATH=./data/output/
+
+4. Run PySpark Job Locally
+
+python src/main.py
+
+5. Trigger with Airflow
+
+airflow dags trigger ecommerce_etl
+
+📈 Sample Output
+
+After running the DAG or pipeline, the transformed dataset will be saved to the path defined in .env under OUTPUT_PATH.
+🧪 Tests
+
+You can add tests using pytest:
+
+pytest tests/
+
+🔐 Security Policy
+
+Please refer to SECURITY.md for disclosure guidelines.
+🤝 Contributing
+
+We welcome contributions! Please see CONTRIBUTING.md and CODE_OF_CONDUCT.md before raising PRs or issues.
+📝 License
+
+Distributed under the MIT License. See LICENSE for more information.
+💬 Questions?
+
+Feel free to open an issue or connect on LinkedIn.

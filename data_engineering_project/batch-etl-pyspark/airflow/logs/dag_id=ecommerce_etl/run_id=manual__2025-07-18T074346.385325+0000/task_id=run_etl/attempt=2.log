@@ -1,0 +1,75 @@
+[2025-07-18T08:46:27.812+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-18T08:46:27.988+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_etl.run_etl manual__2025-07-18T07:43:46.385325+00:00 [queued]>
+[2025-07-18T08:46:28.034+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_etl.run_etl manual__2025-07-18T07:43:46.385325+00:00 [queued]>
+[2025-07-18T08:46:28.055+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-07-18T08:46:28.227+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): run_etl> on 2025-07-18 07:43:46.385325+00:00
+[2025-07-18T08:46:28.242+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ecommerce_etl', 'run_etl', 'manual__2025-07-18T07:43:46.385325+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_etl_dag.py', '--cfg-path', '/tmp/tmpungqojo5']
+[2025-07-18T08:46:28.245+0000] {logging_mixin.py:188} WARNING - /mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=16876) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-18T08:46:28.247+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask run_etl
+[2025-07-18T08:46:28.248+0000] {standard_task_runner.py:63} INFO - Started process 16894 to run task
+[2025-07-18T08:46:28.375+0000] {task_command.py:426} INFO - Running <TaskInstance: ecommerce_etl.run_etl manual__2025-07-18T07:43:46.385325+00:00 [running]> on host LAPTOP-2CRA05LG.
+[2025-07-18T08:46:28.550+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ecommerce_etl' AIRFLOW_CTX_TASK_ID='run_etl' AIRFLOW_CTX_EXECUTION_DATE='2025-07-18T07:43:46.385325+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-18T07:43:46.385325+00:00'
+[2025-07-18T08:46:28.553+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-18T08:46:28.555+0000] {logging_mixin.py:188} INFO - Creating SparkSession with appName: EcommerceSalesAnalytics and master: local[*]
+[2025-07-18T08:46:42.396+0000] {logging_mixin.py:188} INFO - SparkSession created successfully.
+[2025-07-18T08:46:42.402+0000] {logging_mixin.py:188} INFO - Attempting to read from: /mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/data_engineering/data_engineering_project/batch-etl-pyspark/data/raw/orders.csv
+[2025-07-18T08:46:53.367+0000] {logging_mixin.py:188} INFO - Attempting to read from: /mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/data_engineering/data_engineering_project/batch-etl-pyspark/data/raw/customers.csv
+[2025-07-18T08:46:53.899+0000] {logging_mixin.py:188} INFO - Attempting to read from: /mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/data_engineering/data_engineering_project/batch-etl-pyspark/data/raw/products.csv
+[2025-07-18T08:46:54.700+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-18T08:46:54.706+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/data_engineering/data_engineering_project/batch-etl-pyspark/airflow/dags/ecommerce_etl_dag.py", line 28, in run_etl
+    enriched_df = transform_data(orders, customers, products)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/data_engineering/data_engineering_project/batch-etl-pyspark/src/etl/transform.py", line 39, in transform_data
+    .agg(sum("amount").alias("total_revenue"))
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/pyspark/sql/group.py", line 186, in agg
+    jdf = self._jgd.agg(exprs[0]._jc, _to_seq(self.session._sc, [c._jc for c in exprs[1:]]))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `category` cannot be resolved. Did you mean one of the following? [`amount`, `name`, `name`, `email`, `price`].;
+'Aggregate ['category], ['category, sum(amount#92) AS total_revenue#114]
++- Project [product_id#19, customer_id#18, order_id#17, quantity#20, order_date#21, name#45, email#46, name#68, price#69, (cast(quantity#20 as double) * price#69) AS amount#92]
+   +- Project [product_id#19, customer_id#18, order_id#17, quantity#20, order_date#21, name#45, email#46, name#68, price#69]
+      +- Join Inner, (product_id#19 = product_id#67)
+         :- Project [customer_id#18, order_id#17, product_id#19, quantity#20, order_date#21, name#45, email#46]
+         :  +- Join Inner, (customer_id#18 = customer_id#44)
+         :     :- Relation [order_id#17,customer_id#18,product_id#19,quantity#20,order_date#21] csv
+         :     +- Relation [customer_id#44,name#45,email#46] csv
+         +- Relation [product_id#67,name#68,price#69] csv
+
+[2025-07-18T08:46:54.824+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=ecommerce_etl, task_id=run_etl, run_id=manual__2025-07-18T07:43:46.385325+00:00, execution_date=20250718T074346, start_date=20250718T084627, end_date=20250718T084654
+[2025-07-18T08:46:54.888+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 16 for task run_etl ([UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `category` cannot be resolved. Did you mean one of the following? [`amount`, `name`, `name`, `email`, `price`].;
+'Aggregate ['category], ['category, sum(amount#92) AS total_revenue#114]
++- Project [product_id#19, customer_id#18, order_id#17, quantity#20, order_date#21, name#45, email#46, name#68, price#69, (cast(quantity#20 as double) * price#69) AS amount#92]
+   +- Project [product_id#19, customer_id#18, order_id#17, quantity#20, order_date#21, name#45, email#46, name#68, price#69]
+      +- Join Inner, (product_id#19 = product_id#67)
+         :- Project [customer_id#18, order_id#17, product_id#19, quantity#20, order_date#21, name#45, email#46]
+         :  +- Join Inner, (customer_id#18 = customer_id#44)
+         :     :- Relation [order_id#17,customer_id#18,product_id#19,quantity#20,order_date#21] csv
+         :     +- Relation [customer_id#44,name#45,email#46] csv
+         +- Relation [product_id#67,name#68,price#69] csv
+; 16894)
+[2025-07-18T08:46:54.923+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-18T08:46:54.970+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-18T08:46:54.974+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

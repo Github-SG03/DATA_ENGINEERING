@@ -1,0 +1,54 @@
+[2025-07-18T09:22:48.183+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-18T09:22:48.401+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_etl.run_etl manual__2025-07-18T09:01:22.623150+00:00 [queued]>
+[2025-07-18T09:22:48.447+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_etl.run_etl manual__2025-07-18T09:01:22.623150+00:00 [queued]>
+[2025-07-18T09:22:48.450+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-07-18T09:22:48.550+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): run_etl> on 2025-07-18 09:01:22.623150+00:00
+[2025-07-18T09:22:48.561+0000] {standard_task_runner.py:63} INFO - Started process 20906 to run task
+[2025-07-18T09:22:48.566+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ecommerce_etl', 'run_etl', 'manual__2025-07-18T09:01:22.623150+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_etl_dag.py', '--cfg-path', '/tmp/tmplb8fhjg_']
+[2025-07-18T09:22:48.572+0000] {standard_task_runner.py:91} INFO - Job 29: Subtask run_etl
+[2025-07-18T09:22:48.964+0000] {task_command.py:426} INFO - Running <TaskInstance: ecommerce_etl.run_etl manual__2025-07-18T09:01:22.623150+00:00 [running]> on host LAPTOP-2CRA05LG.
+[2025-07-18T09:22:49.844+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ecommerce_etl' AIRFLOW_CTX_TASK_ID='run_etl' AIRFLOW_CTX_EXECUTION_DATE='2025-07-18T09:01:22.623150+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-18T09:01:22.623150+00:00'
+[2025-07-18T09:22:49.848+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-18T09:22:50.445+0000] {logging_mixin.py:188} INFO - Creating SparkSession with appName: EcommerceSalesAnalytics and master: local[*]
+[2025-07-18T09:23:14.628+0000] {logging_mixin.py:188} INFO - SparkSession created successfully.
+[2025-07-18T09:23:14.633+0000] {logging_mixin.py:188} INFO - Attempting to read from: /mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/data_engineering/data_engineering_project/batch-etl-pyspark/data/raw/orders.csv
+[2025-07-18T09:23:29.667+0000] {logging_mixin.py:188} INFO - Attempting to read from: /mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/data_engineering/data_engineering_project/batch-etl-pyspark/data/raw/customers.csv
+[2025-07-18T09:23:30.384+0000] {logging_mixin.py:188} INFO - Attempting to read from: /mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/data_engineering/data_engineering_project/batch-etl-pyspark/data/raw/products.csv
+[2025-07-18T09:23:31.788+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-18T09:23:31.791+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/data_engineering/data_engineering_project/batch-etl-pyspark/airflow/dags/ecommerce_etl_dag.py", line 28, in run_etl
+    enriched_df = transform_data(orders, customers, products)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/data_engineering/data_engineering_project/batch-etl-pyspark/src/etl/transform.py", line 25, in transform_data
+    .agg(count("order_id").alias("sales_count")) \
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/pyspark/sql/group.py", line 186, in agg
+    jdf = self._jgd.agg(exprs[0]._jc, _to_seq(self.session._sc, [c._jc for c in exprs[1:]]))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Shivam Gupta/OneDrive/Documents/Shivam_Developement/DATA_ENGINEERING/data_engineering_project/batch-etl-pyspark/.venv/lib/python3.12/site-packages/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [AMBIGUOUS_REFERENCE] Reference `name` is ambiguous, could be: [`name`, `name`].
+[2025-07-18T09:23:31.884+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=ecommerce_etl, task_id=run_etl, run_id=manual__2025-07-18T09:01:22.623150+00:00, execution_date=20250718T090122, start_date=20250718T092248, end_date=20250718T092331
+[2025-07-18T09:23:31.942+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 29 for task run_etl ([AMBIGUOUS_REFERENCE] Reference `name` is ambiguous, could be: [`name`, `name`].; 20906)
+[2025-07-18T09:23:31.968+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-18T09:23:32.007+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-18T09:23:32.012+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

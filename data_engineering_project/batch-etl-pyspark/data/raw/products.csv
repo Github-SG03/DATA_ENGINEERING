@@ -1,1 +1,3 @@
-# This directory is intended to hold the processed data files after the ETL pipeline has run.
+product_id,name,category,price
+101,Apple iPhone,Electronics,699
+102,Samsung TV,Electronics,1199

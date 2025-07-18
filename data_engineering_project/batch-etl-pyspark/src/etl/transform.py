@@ -1,22 +1,14 @@
-from pyspark.sql import SparkSession # type: ignore
-from pyspark.sql.functions import col, sum, count, when # type: ignore
+from pyspark.sql import DataFrame #type: ignore
 
-def transform_data(spark, orders_df, customers_df, products_df):
-    # Join orders with customers and products
-    joined_df = orders_df.join(customers_df, on="customer_id", how="inner") \
-                          .join(products_df, on="product_id", how="inner")
+def transform_data(orders_df: DataFrame, customers_df: DataFrame, products_df: DataFrame) -> DataFrame:
+    # Optional: Rename 'name' in customers before join to avoid duplication
+    customers_df = customers_df.withColumnRenamed("name", "customer_name")
+    products_df = products_df.withColumnRenamed("name", "product_name")
 
-    # Calculate revenue by category
-    revenue_by_category = joined_df.groupBy("category") \
-                                    .agg(sum("amount").alias("total_revenue"))
+    # Join orders with customers
+    orders_customers_df = orders_df.join(customers_df, on="customer_id", how="inner")
 
-    # Calculate top-selling products
-    top_selling_products = joined_df.groupBy("product_id") \
-                                     .agg(count("order_id").alias("sales_count")) \
-                                     .orderBy(col("sales_count").desc())
+    # Join with products
+    enriched_df = orders_customers_df.join(products_df, on="product_id", how="inner")
 
-    # Calculate customer lifetime value (LTV)
-    ltv_df = joined_df.groupBy("customer_id") \
-                      .agg(sum("amount").alias("customer_lifetime_value"))
-
-    return revenue_by_category, top_selling_products, ltv_df
+    return enriched_df

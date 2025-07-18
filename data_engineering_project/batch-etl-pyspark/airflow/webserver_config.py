@@ -21,7 +21,7 @@ from __future__ import annotations
 
 import os
 
-from flask_appbuilder.const import AUTH_DB
+from flask_appbuilder.const import AUTH_DB #type: ignore
 
 # from airflow.www.fab_security.manager import AUTH_LDAP
 # from airflow.www.fab_security.manager import AUTH_OAUTH

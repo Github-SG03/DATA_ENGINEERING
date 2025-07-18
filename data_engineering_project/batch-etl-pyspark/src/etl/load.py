@@ -1,16 +1,13 @@
-from pyspark.sql import SparkSession # type: ignore
-from pyspark.sql import DataFrame # type: ignore
+import os
+from dotenv import load_dotenv #type: ignore
+from src.config.settings import spark  # assuming spark session is created here
 
-def load_data(df: DataFrame, output_path: str, format: str = 'parquet') -> None:
-    """
-    Load the transformed DataFrame to the specified output path in the given format.
+load_dotenv()
 
-    Parameters:
-    df (DataFrame): The DataFrame to be loaded.
-    output_path (str): The path where the DataFrame will be saved.
-    format (str): The format to save the DataFrame. Default is 'parquet'.
-    """
-    if format not in ['parquet', 'delta']:
-        raise ValueError("Unsupported format. Please use 'parquet' or 'delta'.")
+# Sample DataFrame just for testing (replace with your actual transformed df)
+df = spark.read.csv("data/raw/customers.csv", header=True, inferSchema=True)
 
-    df.write.mode('overwrite').format(format).save(output_path)
+output_path = os.getenv("OUTPUT_PATH")
+print(f"[DEBUG] Writing data to: {output_path}")
+
+df.write.mode("overwrite").parquet(output_path)
